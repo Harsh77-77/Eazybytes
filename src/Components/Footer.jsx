@@ -19,7 +19,7 @@ const Footer = () => {
     <div className="flex px-5 lg:px-10 whitespace-nowrap text-gray-400">
       <p>Computer Application</p>
       <p className=" mt-[-24px]  text-xs ml-14 lg:text-base lg:whitespace-normal lg:ml-96 lg:pl-28">
-        Guru Gobind Singh Indraprastha University
+         Indraprastha University
       </p>
     </div>
 
