@@ -138,7 +138,7 @@ function Eyes() {
   return (
     <div className='eyes w-full h-screen -mt-16 bg-[#3b808b] overflow-hidden'>
       <div className=' capitalize relative w-full h-full bg-cover bg-center break-words z-10 place-content-center text-center text-7xl lg:text-9xl font-bold'>
-        <h1>turning ideas</h1>
+        <h1>turning </h1>
         <h1 className='tracking-widest space-x-7'>  ideas into</h1>
         <h1>interactive website</h1>
        
