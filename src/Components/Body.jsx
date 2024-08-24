@@ -5,7 +5,7 @@ const Body = () => {
     <div>
 
     <section id="Home"></section>
-    <div className=" mt-4 px-8 lg:mt-28 lg:px-72 md:mt-24 md:px-60"> 
+    <div className=" mt-4 px-8 lg:mt-28 lg:px-72 md:mt-24 md:px-28"> 
   <h1 className=" lg:text-lg md:text-lg ">
        Hey There👋 I am
        <span className="text-blue-500 block mt-2 font-bold text-4xl lg:text-6xl md:text-5xl  ">
@@ -25,7 +25,7 @@ const Body = () => {
 
 
   {/* button */}
-  <div className="flex justify-normal space-x-7 mx-12 pt-12 lg:mx-72 md:mx-60 lg:space-x-28">
+  <div className="flex justify-normal space-x-7 mx-12 pt-12 lg:mx-72 md:mx-32 lg:space-x-28">
           <a
           href="https://www.linkedin.com/in/harsh-singh-4z/" target="_blank"
             type="button"
@@ -47,7 +47,7 @@ const Body = () => {
 
 
 {/* image */}
-          <div className="mt-11">
+          <div className="mt-11  hidden lg:block ">
         
           <div className="absolute right-0 top-64 w-96 h-96 rounded-full bg-blue-500 overflow-hidden mt-72 lg:absolute lg:mt-0 lg:transform lg:translate-y- lg:w-96 lg:h-96 lg:rounded-full lg:overflow-hidden lg:right-56 lg:  "></div>
           <img
@@ -67,7 +67,7 @@ const Body = () => {
 
 {/* about me */}
 <section id="About"></section>
-<div>
+<div className="-mt-96  md:-mt-96 lg:-mt-0  ">
 <div className="flex">
             <div className="pt-96 mt-24 mx-10 lg:pt-10 lg:mx-48  ">
             
@@ -102,7 +102,7 @@ const Body = () => {
                 <p></p>
               </div>
             </div>
-            <div className=" pt-16 hidden sm:block ">
+            <div className=" pt-16 hidden lg:block ">
               <img
                 src="/assets/coding.gif"
                 alt="logo"
@@ -127,8 +127,8 @@ const Body = () => {
 
 
 
-          <div className="flex bg-gray-800 w-full">
-            <h2 className="text-3xl mx-24 font-bold whitespace-nowrap h-96 py-12 text-white lg:text-5xl lg:mx-80 lg:px-60">
+          <div className="flex bg-gray-800 w-full text-center">
+            <h2 className="text-3xl mx-16 font-bold whitespace-nowrap h-96 py-12 text-white lg:text-5xl lg:mx-80 lg:px-60 md:px-48">
               Let's Work Together
             </h2>
           </div>
@@ -234,7 +234,7 @@ const Body = () => {
               </a>
               <h1 className="pt-6 px-5 lg:px-0 text-3xl font-semibold">Weather App</h1>
               <p className="pt-3 px-5 lg:px-0">
-                Built a weather app using react js and rest API's.
+                Building a weather app using react js and rest API's. (currently working)
               </p>
             </div>
           </div>

@@ -9,7 +9,7 @@ const Footer = () => {
     <img
       src="/assets/education.gif"
       alt="img"
-      className="object-scale-down h-40 lg:h-96 float-right hidden sm:block  mt-80 lg:mt-0"
+      className="object-scale-down h-40 lg:h-96 float-right hidden lg:block  mt-80 lg:mt-0"
     ></img>
     <h1 className=" text-2xl lg:text-4xl font-bold px-5 lg:px-10 pt-5">Education</h1>
 
@@ -18,14 +18,14 @@ const Footer = () => {
     <p className="px-5 lg:px-10 text-gray-400">Bachelor Degree</p>
     <div className="flex px-5 lg:px-10 whitespace-nowrap text-gray-400">
       <p>Computer Application</p>
-      <p className=" mt-[-24px]  text-xs ml-20 lg:text-base lg:whitespace-normal lg:ml-96 lg:pl-64">
+      <p className=" mt-[-24px]  text-xs ml-20 lg:text-base lg:whitespace-normal md:ml-96 lg:ml-96 lg:pl-64">
          Indraprastha University
       </p>
     </div>
 
     <div className="flex px-5 whitespace-nowrap lg:px-10 text-gray-400">
       <p>6th sem SGPA-8.7</p>
-      <p className="ml-40 lg:ml-96 lg:pl-96">2021-24</p>
+      <p className="ml-40 lg:ml-96 lg:pl-96 md:ml-96 md:px-16">2021-24</p>
     </div>
 
     <p className="px-5 lg:px-10 text-gray-400">Overall CGPA-8.2</p>
@@ -36,7 +36,7 @@ const Footer = () => {
       <p className="px-5 whitespace-nowrap lg:px-10 text-gray-400 ">
         Central board of secondary education
       </p>
-      <p className="px-2  whitespace-nowrap text-gray-400 lg:ml-96 lg:pl-48 ">2020-21</p>
+      <p className="px-2  whitespace-nowrap text-gray-400 lg:ml-96 lg:pl-48  md:ml-72">2020-21</p>
     </div>
     <br></br>
     <p className="px-5 lg:px-10 text-gray-400 "> Secondary Education</p>
@@ -44,7 +44,7 @@ const Footer = () => {
       <p className="px-5 whitespace-nowrap lg:px-10 text-gray-400 ">
         Central board of secondary education
       </p>
-      <p className="px-2 text-gray-400  lg:ml-96 lg:pl-48 whitespace-nowrap">2018-19</p>
+      <p className="px-2 text-gray-400  lg:ml-96 lg:pl-48 whitespace-nowrap  md:ml-72">2018-19</p>
     </div>
   </div>
 
