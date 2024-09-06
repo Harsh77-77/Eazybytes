@@ -218,7 +218,7 @@ const Body = () => {
                   className="scale-90 lg:scale-100 lg:h-72  w-auto rounded-xl        transition-transform hover:scale-95 lg:hover:scale-110 duration-300 transform  hover:shadow-2xl                  "
                 ></img>
               </a>
-              <h1 className="pt-6 px-5 lg:px-0 text-3xl font-semibold">Amazon UI</h1>
+              <h1 className="pt-6 px-5 lg:px-0 text-3xl font-semibold">Fleava</h1>
               <p className="pt-3 px-5 lg:px-0">
                 Built a Dynamic website using Locomotive JS, TailwindCss & ReactJS.
               </p>
