@@ -211,21 +211,21 @@ const Body = () => {
             </div>
 
             <div className="pt-16 lg:pt-28">
-              <a href="https://github.com/Harsh77-77/Amazon-clone-">
+              <a href="https://fleava-psi.vercel.app/">
                 <img
-                  src="/assets/amazon.png"
+                  src="/assets/fleava.png"
                   alt="img"
                   className="scale-90 lg:scale-100 lg:h-72  w-auto rounded-xl        transition-transform hover:scale-95 lg:hover:scale-110 duration-300 transform  hover:shadow-2xl                  "
                 ></img>
               </a>
               <h1 className="pt-6 px-5 lg:px-0 text-3xl font-semibold">Amazon UI</h1>
               <p className="pt-3 px-5 lg:px-0">
-                Built a user interface of amazon using html, css and JS.
+                Built a Dynamic website using Locomotive JS, TailwindCss & ReactJS.
               </p>
             </div>
 
             <div className="pt-16 lg:pt-28 ">
-              <a href="">
+              <a href="#">
                 <img
                   src="/assets/weather.png"
                   alt="img"
