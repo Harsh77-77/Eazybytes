@@ -203,7 +203,7 @@ const Body = () => {
                   className="scale-90 lg:scale-100 lg:h-72 w-auto rounded-xl      transition-transform hover:scale-95 lg:hover:scale-110 duration-300 transform  hover:shadow-2xl              "
                 ></img>
               </a>
-              <h1 className="pt-6 px-5 lg:px-0 text-3xl font-semibold ">Hoster</h1>
+              <h1 className="pt-6 px-5 lg:px-0 text-3xl font-semibold ">Pop Rock Crystal</h1>
               <p className="pt-3 px-5 lg:px-0">
                 Using Reactjs & TailwindCss build a responsive Landing Page
               </p>
@@ -223,7 +223,23 @@ const Body = () => {
               </p>
             </div>
 
+            
+
             <div className="pt-16 lg:pt-28 ">
+              <a href="https://harsh-s-user-management-application.vercel.app/">
+                <img
+                  src="/assets/UM.png"
+                  alt="img"
+                  className="scale-90 lg:scale-100 lg:h-72 w-auto rounded-xl             transition-transform hover:scale-95 lg:hover:scale-110 duration-300 transform  hover:shadow-2xl                                 "
+                ></img>
+              </a>
+              <h1 className="pt-6 px-5 lg:px-0 text-3xl font-semibold">User Management App</h1>
+              <p className="pt-3 px-5 lg:px-0">
+              This CRUD-based user management application allows for creating, reading, updating, and deleting users by interacting with the JSONPlaceholder API
+              </p>
+            </div>
+
+            {/* <div className="pt-16 lg:pt-28  ">
               <a href="#">
                 <img
                   src="/assets/weather.png"
@@ -235,7 +251,8 @@ const Body = () => {
               <p className="pt-3 px-5 lg:px-0">
                 Building a weather app using react js and rest API's. (currently working)
               </p>
-            </div>
+            </div> */}
+
           </div>
         </div>
         <br></br>
