@@ -1,4 +1,6 @@
 import Header from "./Components/Header"
+import AboutMe from "./Components/AboutMe"
+import Projects from "./Components/Projects"
 import Body from "./Components/Body"
 import Footer from "./Components/Footer"
 import Marque from "./Components/Marque"
@@ -20,6 +22,8 @@ function App() {
       <div className="  backdrop-blur-md  sticky top-0 z-50 w-full ">
       <Header/></div>
       <Body/>
+      <AboutMe/>
+      <Projects/>
       <Eyes/>
       <Footer/>
       <Marque/>
