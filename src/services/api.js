@@ -58,7 +58,6 @@
 //   }
 // };
 
-
 const API_URL = 'https://backen-portfolio.vercel.app/api';
 
 export const submitContact = async (contactData) => {
