@@ -177,7 +177,7 @@ const Featured = () => {
       </div>
       <div className="px-[5.3vw]">
 
-   <h1>hello</h1>
+  
 
         <div className="cards w-full flex flex-col md:flex-row gap-10 mt-10">
           <div
