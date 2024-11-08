@@ -422,7 +422,7 @@ const Header = () => {
   };
 
   return (
-    <nav ref={navbarRef} className="border-gray-200 navbar fixed top-0 w-full bg-white dark:bg-gray-800 backdrop-blur-3xl">
+    <nav ref={navbarRef} className=" navbar fixed top-0 w-full border-gray-200 bg-white dark:bg-gray-800 backdrop-blur-lg   ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="/" className="flex items-center rtl:space-x-reverse">
           <div className="flex flex-col-1 space-x-10 ">

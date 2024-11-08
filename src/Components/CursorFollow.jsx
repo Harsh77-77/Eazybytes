@@ -29,7 +29,9 @@ export default function CursorFollow() {
     <>
       <div 
         ref={cursorRef}
-        className="fixed w-8 h-8 rounded-full bg-blue-500 opacity-50 pointer-events-none z-50"
+        className="
+        hidden lg:block
+        fixed w-8 h-8 rounded-full bg-blue-500 opacity-50 pointer-events-none z-50"
         style={{ top: -16, left: -16 }}
       />
       

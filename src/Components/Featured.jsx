@@ -169,7 +169,7 @@ const Featured = () => {
   
 
   return (
-    <div className="w-full py-[3vw] bg-slate-50 dark:bg-gradient-to-r from-slate-800  to-black ">
+    <div id="Projects" className="w-full py-[3vw] bg-slate-50 dark:bg-gradient-to-r from-slate-800  to-black ">
       <div className="w-full px-[5vw] border-b-2 border-zinc-700 pb-[1vw]">
         <h1 className="text-[12vw] md:text-[6vw] font-['NeueMontreal'] tracking-tight">
           Projects

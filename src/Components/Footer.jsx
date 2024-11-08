@@ -46,7 +46,7 @@ const handleFormSubmit = (e) => {
 
   return (
     <div>
-      <section className="relative z-10 overflow-hidden bg-white dark:bg-gray-900 py-20 lg:py-[120px]">
+      <section id="Contact" className="relative z-10 overflow-hidden bg-white dark:bg-gray-900 py-20 lg:py-[120px]">
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-4 lg:justify-between">
             <div className="w-full px-8 lg:w-1/2 xl:w-6/12">
