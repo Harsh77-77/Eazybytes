@@ -58,42 +58,50 @@
 //   }
 // };
 
-const API_URL = 'https://backen-portfolio.vercel.app/api';
+// const API_URL = 'https://backen-portfolio.vercel.app/api';
 
-export const submitContact = async (contactData) => {
-  try {
-    const response = await fetch(`${API_URL}/submit-contact`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(contactData),
-    });
+// export const submitContact = async (contactData) => {
+//   try {
+//     const response = await fetch(`${API_URL}/submit-contact`, {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(contactData),
+//     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.error || 'Failed to submit contact form');
-    }
+//     if (!response.ok) {
+//       const errorData = await response.json();
+//       throw new Error(errorData.error || 'Failed to submit contact form');
+//     }
 
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error submitting contact form:', error);
-    throw error;
-  }
-};
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error('Error submitting contact form:', error);
+//     throw error;
+//   }
+// };
 
-// Test API connection
-export const testConnection = async () => {
-  try {
-    const response = await fetch(`${API_URL}/test`);
-    if (!response.ok) {
-      throw new Error('API test failed');
-    }
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error testing API connection:', error);
-    throw error;
-  }
-};
+// // Test API connection
+// export const testConnection = async () => {
+//   try {
+//     const response = await fetch(`${API_URL}/test`);
+//     if (!response.ok) {
+//       throw new Error('API test failed');
+//     }
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error('Error testing API connection:', error);
+//     throw error;
+//   }
+// };
+const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
+  method: 'POST',
+  mode: 'no-cors', // Only for testing
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(formData),
+});
