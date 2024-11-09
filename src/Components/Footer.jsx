@@ -257,31 +257,59 @@ export default function ContactForm() {
   };
   
 
+  // const handleFormSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus('Submitting...');
+
+  //   // try {
+  //   //   const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
+  //   //     method: 'POST',
+  //   //     headers: {
+  //   //       'Content-Type': 'application/json',
+  //   //     },
+  //   //     body: JSON.stringify(formData),
+  //   //   });
+      
+  //   //   if (response.ok) {
+  //   //     const data = await response.json();
+  //   //     setStatus(data.message);
+  //   //     setFormData({ username: '', email: '', phone_no: '', message: '' });
+  //   //   } else {
+  //   //     const errorData = await response.json();
+  //   //     setStatus(`Error: ${errorData.error || 'Failed to submit contact details'}`);
+  //   //   }
+  //   // } catch (error) {
+  //   //   console.error('Error:', error);
+  //   //   setStatus('An error occurred. Please try again.');
+  //   // }
+  //   try {
+  //     const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setStatus(data.message); // Success message
+  //       setFormData({ username: '', email: '', phone_no: '', message: '' }); // Clear the form
+  //     } else {
+  //       const errorData = await response.json();
+  //       setStatus(`Error: ${errorData.error || 'Failed to submit contact details'}`);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     setStatus('An error occurred. Please try again.');
+  //   }
+  // };
+
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setStatus('Submitting...');
-
-    // try {
-    //   const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(formData),
-    //   });
-      
-    //   if (response.ok) {
-    //     const data = await response.json();
-    //     setStatus(data.message);
-    //     setFormData({ username: '', email: '', phone_no: '', message: '' });
-    //   } else {
-    //     const errorData = await response.json();
-    //     setStatus(`Error: ${errorData.error || 'Failed to submit contact details'}`);
-    //   }
-    // } catch (error) {
-    //   console.error('Error:', error);
-    //   setStatus('An error occurred. Please try again.');
-    // }
+  
     try {
       const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
         method: 'POST',
@@ -290,11 +318,11 @@ export default function ContactForm() {
         },
         body: JSON.stringify(formData),
       });
-
+      
       if (response.ok) {
         const data = await response.json();
-        setStatus(data.message); // Success message
-        setFormData({ username: '', email: '', phone_no: '', message: '' }); // Clear the form
+        setStatus(data.message);
+        setFormData({ username: '', email: '', phone_no: '', message: '' });
       } else {
         const errorData = await response.json();
         setStatus(`Error: ${errorData.error || 'Failed to submit contact details'}`);
