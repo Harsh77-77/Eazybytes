@@ -8,6 +8,7 @@ const ContactForm = () => {
     message: ''
   });
   const [status, setStatus] = useState('');
+  const [detailedError, setDetailedError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,6 +21,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Submitting...');
+    setDetailedError('');
 
     try {
       const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
@@ -42,6 +44,9 @@ const ContactForm = () => {
     } catch (error) {
       console.error('Error:', error);
       setStatus(`Error: ${error.message}`);
+      if (error.details) {
+        setDetailedError(`Detailed error: ${error.details}\n\nStack trace: ${error.stack}`);
+      }
     }
   };
 
@@ -118,6 +123,11 @@ const ContactForm = () => {
             <p className={`mt-4 text-center text-sm font-medium ${status.startsWith('Error') ? 'text-red-600' : 'text-green-600'}`}>
               {status}
             </p>
+          )}
+          {detailedError && (
+            <pre className="mt-4 p-4 bg-red-100 text-red-800 rounded-md overflow-x-auto">
+              {detailedError}
+            </pre>
           )}
         </div>
       </div>
