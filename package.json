@@ -1,7 +1,6 @@
 {
   "name": "portfolio",
   "private": true,
-  "proxy": "https://backen-portfolio.vercel.app",
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
