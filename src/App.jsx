@@ -10,6 +10,7 @@ import Eyes from "./Components/Eyes"
 import CursorFollow from "./Components/CursorFollow"
 import Scroll from "./Components/Scroll"
 import Featured from "./Components/Featured"
+import ContactForm from "./Components/Footer"
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
         {/* <Projects /> */}
         <Featured/>
         <Eyes />
-        <Footer />
+        <ContactForm/>
+        {/* <Footer /> */}
         <Scroll/>
         <Quicklinks />
       </div>
