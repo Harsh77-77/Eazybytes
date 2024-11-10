@@ -20,7 +20,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('Submitting...');
-
+  
     try {
       const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
         method: 'POST',
@@ -30,18 +30,19 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
         credentials: 'include',
       });
-
+  
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to submit contact details');
+        const errorText = await response.text();
+        console.error('Server response:', response.status, errorText);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-
+  
       const data = await response.json();
       setStatus(data.message || 'Contact details submitted successfully!');
       setFormData({ username: '', email: '', phone_no: '', message: '' });
     } catch (error) {
       console.error('Error:', error);
-      setStatus(error.message || 'An error occurred. Please try again.');
+      setStatus('An error occurred. Please check the console and try again.');
     }
   };
 
