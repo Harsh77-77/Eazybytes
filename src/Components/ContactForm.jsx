@@ -29,16 +29,17 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
+      // Create a FormData object for compatibility with Formspree
+      const form = new FormData();
+      form.append('name', formData.name);
+      form.append('email', formData.email);
+      form.append('phone', formData.phone);
+      form.append('message', formData.message);
+
       const response = await fetch('https://formspree.io/f/xldenjqd', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        body: form,
       });
-
-      const data = await response.json();
 
       if (response.ok) {
         toast({
@@ -47,6 +48,7 @@ export default function ContactForm() {
         });
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
+        const data = await response.json();
         throw new Error(data.error || 'Failed to send message');
       }
     } catch (error) {
