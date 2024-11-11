@@ -566,33 +566,33 @@ export default function ContactForm() {
     }));
   };
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('Submitting...');
+  // const handleFormSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setStatus('Submitting...');
 
-    try {
-      const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-        credentials: 'include',
-      });
+  //   try {
+  //     const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(formData),
+  //       credentials: 'include',
+  //     });
 
-      if (response.ok) {
-        const data = await response.json();
-        setStatus(data.message);
-        setFormData({ username: '', email: '', phone_no: '', message: '' });
-      } else {
-        const errorData = await response.json();
-        setStatus(`Error: ${errorData.error || 'Failed to submit contact details'}`);
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      setStatus('An error occurred. Please try again.');
-    }
-  };
+  //     if (response.ok) {
+  //       const data = await response.json();
+  //       setStatus(data.message);
+  //       setFormData({ username: '', email: '', phone_no: '', message: '' });
+  //     } else {
+  //       const errorData = await response.json();
+  //       setStatus(`Error: ${errorData.error || 'Failed to submit contact details'}`);
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error);
+  //     setStatus('An error occurred. Please try again.');
+  //   }
+  // };
 
   // ... rest of your component code ...
 
@@ -672,7 +672,7 @@ export default function ContactForm() {
             <div className="w-full px-8 lg:w-1/2 xl:w-6/12">
               <div className="max-w-[570px]">
                 <form
-                  onSubmit={handleFormSubmit}
+                  // onSubmit={handleFormSubmit}
                   className="flex flex-wrap justify-between"
                 >
                   <div className="w-full px-4 sm:w-1/2">
