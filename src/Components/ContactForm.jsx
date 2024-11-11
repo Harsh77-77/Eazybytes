@@ -2,49 +2,46 @@ import React, { useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    phone_no: "",
-    message: "",
+    username: '',
+    email: '',
+    phone_no: '',
+    message: ''
   });
-  const [status, setStatus] = useState("");
-  const [detailedError, setDetailedError] = useState("");
+  const [status, setStatus] = useState('');
+  const [detailedError, setDetailedError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
+    setFormData(prevState => ({
       ...prevState,
-      [name]: value,
+      [name]: value
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Submitting...");
-    setDetailedError("");
+    setStatus('Submitting...');
+    setDetailedError('');
 
     try {
-      const response = await fetch(
-        "https://backen-portfolio.vercel.app/api/submit-contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to submit contact details");
+        throw new Error(errorData.error || 'Failed to submit contact details');
       }
 
       const data = await response.json();
-      setStatus(data.message || "Contact details submitted successfully!");
-      setFormData({ username: "", email: "", phone_no: "", message: "" });
+      setStatus(data.message || 'Contact details submitted successfully!');
+      setFormData({ username: '', email: '', phone_no: '', message: '' });
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error);
       setStatus(`Error: ${error.message}`);
       if (error.details) {
         setDetailedError(`Detailed error: ${error.details}`);
