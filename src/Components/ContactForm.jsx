@@ -24,7 +24,7 @@ const ContactForm = () => {
     setDetailedError('');
 
     try {
-      const response = await fetch('https://backen-portfolio.vercel.app/api/server', {
+      const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
