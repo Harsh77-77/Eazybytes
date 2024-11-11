@@ -32,12 +32,12 @@ const ContactForm = () => {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to submit contact details');
+        throw new Error(data.error || 'Failed to submit contact details');
       }
 
-      const data = await response.json();
       setStatus(data.message || 'Contact details submitted successfully!');
       setFormData({ username: '', email: '', phone_no: '', message: '' });
     } catch (error) {
