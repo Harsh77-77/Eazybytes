@@ -1,52 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    phone_no: '',
-    message: ''
+    username: "",
+    email: "",
+    phone_no: "",
+    message: "",
   });
-  const [status, setStatus] = useState('');
-  const [detailedError, setDetailedError] = useState('');
+  const [status, setStatus] = useState("");
+  const [detailedError, setDetailedError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Submitting...');
-    setDetailedError('');
+    setStatus("Submitting...");
+    setDetailedError("");
 
     try {
-      const response = await fetch('https://backen-portfolio.vercel.app/api/submit-contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-        credentials: 'include',
-        mode: 'no-cors' 
-      });
-
-      const data = await response.json();
+      const response = await fetch(
+        "https://backen-portfolio.vercel.app/api/submit-contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit contact details');
+        const errorData = await response.json();
+        throw new Error(errorData.error || "Failed to submit contact details");
       }
 
-      setStatus(data.message || 'Contact details submitted successfully!');
-      setFormData({ username: '', email: '', phone_no: '', message: '' });
+      const data = await response.json();
+      setStatus(data.message || "Contact details submitted successfully!");
+      setFormData({ username: "", email: "", phone_no: "", message: "" });
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
       setStatus(`Error: ${error.message}`);
       if (error.details) {
-        setDetailedError(`Detailed error: ${error.details}\n\nStack trace: ${error.stack}`);
+        setDetailedError(`Detailed error: ${error.details}`);
       }
     }
   };
@@ -58,7 +59,10 @@ const ContactForm = () => {
         <div className="max-w-md mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="username" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label
+                htmlFor="username"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
                 Name
               </label>
               <input
@@ -72,7 +76,10 @@ const ContactForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
                 Email
               </label>
               <input
@@ -86,7 +93,10 @@ const ContactForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="phone_no" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label
+                htmlFor="phone_no"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
                 Phone Number
               </label>
               <input
@@ -100,7 +110,10 @@ const ContactForm = () => {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              >
                 Message
               </label>
               <textarea
@@ -121,7 +134,11 @@ const ContactForm = () => {
             </button>
           </form>
           {status && (
-            <p className={`mt-4 text-center text-sm font-medium ${status.startsWith('Error') ? 'text-red-600' : 'text-green-600'}`}>
+            <p
+              className={`mt-4 text-center text-sm font-medium ${
+                status.startsWith("Error") ? "text-red-600" : "text-green-600"
+              }`}
+            >
               {status}
             </p>
           )}
