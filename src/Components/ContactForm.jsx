@@ -27,7 +27,8 @@ const ContactForm = () => {
       const response = await fetch('https://formspree.io/f/xldenjqd', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData)
       });
@@ -35,17 +36,17 @@ const ContactForm = () => {
       const data = await response.json();
 
       if (response.ok) {
-        setStatus('Message sent successfully!');
+        console.log('Form submitted successfully', data);
+        setStatus('Message sent successfully! Check console for details.');
         setFormData({ name: '', email: '', phone: '', message: '' });
       } else {
+        console.error('Form submission failed', data);
         throw new Error(data.error || 'Failed to send message');
       }
     } catch (error) {
       console.error('Error:', error);
-      setStatus('Failed to send message');
-      if (error instanceof Error) {
-        setDetailedError(`Error details: ${error.message}`);
-      }
+      setStatus('Failed to send message. Check console for details.');
+      setDetailedError(`Error details: ${error.message}`);
     }
   };
 
@@ -56,10 +57,7 @@ const ContactForm = () => {
         <div className="max-w-md mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-              >
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Name
               </label>
               <input
@@ -73,10 +71,7 @@ const ContactForm = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-              >
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Email
               </label>
               <input
@@ -90,10 +85,7 @@ const ContactForm = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-              >
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Phone Number
               </label>
               <input
@@ -107,10 +99,7 @@ const ContactForm = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
-              >
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Message
               </label>
               <textarea
@@ -131,11 +120,9 @@ const ContactForm = () => {
             </button>
           </form>
           {status && (
-            <p
-              className={`mt-4 text-center text-sm font-medium ${
-                status.startsWith("Failed") ? "text-red-600" : "text-green-600"
-              }`}
-            >
+            <p className={`mt-4 text-center text-sm font-medium ${
+              status.startsWith("Failed") ? "text-red-600" : "text-green-600"
+            }`}>
               {status}
             </p>
           )}
